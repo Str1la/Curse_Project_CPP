@@ -6,11 +6,11 @@ int main() {
     GraduateStudentContainer container; // Створюємо об'єкт контейнера
 
     GraduateStudent student1("Doe", "John", "Smith", 1995, "Computer Science", "ABC University",
-        "Advanced Algorithms", "6 months", "2024-12-01", State::InProgres); // Змінено "In Progress" на State::InProgres
+        "Advanced Algorithms", "6 months", "2024-12-01", State::InProgres); 
     container.addStudent(student1);
 
     GraduateStudent student2("Smith", "Jane", "Doe", 1997, "Data Science", "XYZ University",
-        "Big Data Analytics", "4 months", "2024-11-15", State::InProgres); // Змінено "In Progress" на State::InProgres
+        "Big Data Analytics", "4 months", "2024-11-15", State::InProgres); 
     container.addStudent(student2);
 
     int choice;
@@ -21,7 +21,9 @@ int main() {
         std::cout << "3. Sort Students by Name\n";
         std::cout << "4. Sort Students by Birth Year\n";
         std::cout << "5. Filter Students by Progress Status\n";
-        std::cout << "6. Exit\n";
+        std::cout << "6. Save student list to file\n"; // Опція для збереження списку студентів у файл
+        std::cout << "7. Load student list from file\n"; // Опція для завантаження списку студентів з файлу
+        std::cout << "8. Exit\n"; // Додамо опцію виходу з програми
         std::cout << "\n==================================\n";
         std::cout << "Enter your choice: ";
         std::cin >> choice;
@@ -36,7 +38,7 @@ int main() {
             std::string surname, name, patronymic, specialty, university, thesisTopic;
             int birthYear;
             std::string internshipPeriod, defenseDate;
-            State progressStatus; // Додано State progressStatus
+            State progressStatus;
 
             std::cout << "Enter Surname: ";
             std::getline(std::cin, surname);
@@ -64,7 +66,7 @@ int main() {
             std::getline(std::cin, internshipPeriod);
             std::cout << "Enter Defense Date: ";
             std::getline(std::cin, defenseDate);
-            std::cout << "Enter Progress Status (Agreement, InProgres, Review, Admitted, Protected): "; // Змінено "In Progress" на InProgres
+            std::cout << "Enter Progress Status (Agreement, InProgres, Review, Admitted, Protected): "; 
             std::string status;
             std::getline(std::cin, status);
             if (status == "Agreement")
@@ -130,6 +132,14 @@ int main() {
             break;
         }
         case 6: {
+            container.saveToFile("student_list.txt");
+            break;
+        }
+        case 7: {
+            container.loadFromFile("student_list.txt");
+            break;
+        }
+        case 8: {
             std::cout << "Exiting the program.\n";
             break;
         }
@@ -138,7 +148,7 @@ int main() {
             break;
         }
         }
-    } while (choice != 6);
+    } while (choice != 8);
 
     return 0;
 }
