@@ -47,12 +47,12 @@ int main() {
             do {
                 std::cout << "Enter Birth Year: ";
                 std::cin >> birthYear;
-                if (std::cin.fail() || birthYear > 2024) {
+                if (std::cin.fail() || birthYear >= 2024) {
                     std::cin.clear(); // —кидаЇмо флаг помилки вводу
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ќчищуЇмо буфер вводу
                     std::cout << "Invalid input. Please enter a valid birth year less than or equal to 2024.\n";
                 }
-            } while (std::cin.fail() || birthYear > 2024);
+            } while (std::cin.fail() || birthYear >= 2024);
             std::cin.ignore(); // ќчищенн€ буфера вводу
             std::cout << "Enter Specialty: ";
             std::getline(std::cin, specialty);
@@ -69,7 +69,7 @@ int main() {
             std::getline(std::cin, status);
             if (status == "Agreement")
                 progressStatus = State::Agreement;
-            else if (status == "InProgres") // «м≥нено "In Progress" на InProgres
+            else if (status == "InProgres") 
                 progressStatus = State::InProgres;
             else if (status == "Review")
                 progressStatus = State::Review;
@@ -113,7 +113,7 @@ int main() {
             State progressStatus;
             if (status == "Agreement")
                 progressStatus = State::Agreement;
-            else if (status == "InProgres") // «м≥нено "In Progress" на InProgres
+            else if (status == "InProgres") 
                 progressStatus = State::InProgres;
             else if (status == "Review")
                 progressStatus = State::Review;
