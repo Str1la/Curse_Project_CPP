@@ -22,7 +22,7 @@ private:
 
 public:
     // Оголошення віртуального методу для виведення полів класу
-    virtual void print() const override;
+    void print() const override;
 
     // Конструктор за замовчуванням
     GraduateStudent();
