@@ -63,7 +63,8 @@ public:
     // Виведення інформації про всіх студентів у контейнері
     void displayStudents() const {
         for (const auto& student : students) {
-            std::cout << student << "\n";
+            student.print(); // Виклик методу print для кожного студента
+            std::cout << "\n"; // Додатковий переведення рядка між студентами
         }
     }
 
