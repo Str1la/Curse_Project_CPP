@@ -1,3 +1,5 @@
+// Program.cpp
+
 #include <iostream>
 #include <limits> // Для очищення буфера вводу
 #include "GraduateStudentContainer.h" // Включаємо клас контейнера студентів
