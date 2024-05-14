@@ -7,13 +7,13 @@
 int main() {
     GraduateStudentContainer container; // Створюємо об'єкт контейнера
 
-    GraduateStudent student1("Doe", "John", "Smith", 1995, "Computer Science", "ABC University",
+    /*GraduateStudent student1("Doe", "John", "Smith", 1995, "Computer Science", "ABC University",
         "Advanced Algorithms", "6 months", "2024-12-01", State::InProgres); 
     container.addStudent(student1);
 
     GraduateStudent student2("Smith", "Jane", "Doe", 1997, "Data Science", "XYZ University",
         "Big Data Analytics", "4 months", "2024-11-15", State::InProgres); 
-    container.addStudent(student2);
+    container.addStudent(student2);*/
 
     int choice;
     do {

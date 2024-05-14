@@ -4,7 +4,7 @@
 #include <iostream> // Включення простору імен std
 
 // Конструктор за замовчуванням
-Student::Student() : birthYear(0) {}
+Student::Student() : birthYear(2004) {}
 
 // Конструктор ініціалізації
 Student::Student(std::string surname, std::string name, std::string patronymic, int birthYear, std::string specialty, std::string university)
